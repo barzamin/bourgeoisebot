@@ -1,0 +1,28 @@
+{
+  "name": "bourgeoisebot",
+  "version": "1.0.0",
+  "description": "bot for narci wright's discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"haha no tests\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barzamin/bourgeoisebot.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "narcissawright"
+  ],
+  "author": "Erin <sylphofelectricity@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barzamin/bourgeoisebot/issues"
+  },
+  "homepage": "https://github.com/barzamin/bourgeoisebot#readme",
+  "dependencies": {
+    "discord.js": "^9.1.1",
+    "lodash": "^4.15.0"
+  }
+}

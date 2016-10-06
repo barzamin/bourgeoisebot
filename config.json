@@ -1,8 +1,11 @@
 {
-	"guild": "224732197309906947",
+	"guild": "170022105260359680",
 	"admins": [
 		"191627281595236352",
 		"83067947169353728"
 	],
-	"exclusiveroles": [["Bourgeoise", "Proleteriat"]]
+	"bourgeoisie": "Bourgeoisie",
+	"proletariat": "Proletariat",
+	"knights": "Knights",
+	"patreon": "Patrons"
 }

@@ -26,7 +26,7 @@ bot.on('message', (message) => {
   if (message.author.bot) return;
 
   const guild = bot.guilds.find('id', config.guild);
-  if (message.guild == guild) {
+  //if (message.guild == guild) {
     const member = guild.member(message.author);
     if (message.content.startsWith('!promote')) {
       if (canManageProletariat(member)) {
@@ -73,5 +73,5 @@ Available commands are:
 * !demote "username or userid" - remove the proletariat role from a user (requires: config.admin or ${config.bourgeoisie})
 \`\`\``);
     }
-  }
+  //}
 });

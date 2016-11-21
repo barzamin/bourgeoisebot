@@ -64,9 +64,6 @@ ${member_.user.username}#${member_.user.discriminator}`);
           .then(() => message.reply(`✅ unproletarified "${member_.user.username}#${member_.user.discriminator}".`))
           .catch(e => message.reply(`❎ Failed to set user's role: ${e}`));
       }
-    } else if (message.content.match(/cosmo/i)) {
-        console.log("notifying fuckass");
-        message.reply(`*her* name is *Narcissa*, fuckwit`);
     } else if (message.content === '!help') {
       message.reply(`Welcome to cuddlebot v0.1!
 Available commands are:

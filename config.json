@@ -7,8 +7,14 @@
 		"124419785520840704",
 		"143893731009888256"
 	],
-	"bourgeoisie": "Bourgeoisie",
-	"proletariat": "Proletariat",
-	"knights": "Knights",
-	"patreon": "Patrons"
+    "perms": {
+        "manageProletariat": [
+            "Bourgeoisie",
+            "Legacy Bourgeoisie",
+            "Proletariat",
+            "Knights",
+            "Patrons"
+        ]
+    },
+    "proletariat": "Proletariat"
 }

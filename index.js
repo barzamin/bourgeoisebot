@@ -16,10 +16,8 @@ function getMemberByName(guild, name) {
 }
 
 function canManageProletariat(member) {
-  return member.roles.exists('name', config.bourgeoisie)
-    || member.roles.exists('name', config.knights)
-    || member.roles.exists('name', config.patreon)
-    || isAdmin(member);
+  return config.perms.manageProletariat.map(x=>member.roles.exists('name', x))
+    .some(x=>x===true) || isAdmin(member);
 }
 
 bot.on('message', (message) => {

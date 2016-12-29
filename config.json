@@ -2,10 +2,19 @@
 	"guild": "170022105260359680",
 	"admins": [
 		"191627281595236352",
-		"83067947169353728"
+		"83067947169353728",
+
+		"124419785520840704",
+		"143893731009888256"
 	],
-	"bourgeoisie": "Bourgeoisie",
-	"proletariat": "Proletariat",
-	"knights": "Knights",
-	"patreon": "Patrons"
+    "perms": {
+        "manageProletariat": [
+            "Bourgeoisie",
+            "Legacy Bourgeoisie",
+            "Proletariat",
+            "Knights",
+            "Patrons"
+        ]
+    },
+    "proletariat": "Proletariat"
 }

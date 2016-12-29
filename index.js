@@ -16,17 +16,15 @@ function getMemberByName(guild, name) {
 }
 
 function canManageProletariat(member) {
-  return member.roles.exists('name', config.bourgeoisie)
-    || member.roles.exists('name', config.knights)
-    || member.roles.exists('name', config.patreon)
-    || isAdmin(member);
+  return config.perms.manageProletariat.map(x=>member.roles.exists('name', x))
+    .some(x=>x===true) || isAdmin(member);
 }
 
 bot.on('message', (message) => {
   if (message.author.bot) return;
 
   const guild = bot.guilds.find('id', config.guild);
-  if (message.guild == guild) {
+  //if (message.guild == guild) {
     const member = guild.member(message.author);
     if (message.content.startsWith('!promote')) {
       if (canManageProletariat(member)) {
@@ -40,7 +38,7 @@ Correct syntax is \`!promote "<user id|username>".`);
         const member_ = Number.isInteger(parseInt(userid_)) ? guild.member(userid_) : getMemberByName(guild, userid_);
         if (!member_) {message.reply(`❎ User not in guild "${guild.name}."`); return;}
 
-        console.log(`Adding role ${config.proletariat} to user ${member_.id}/\
+        console.log(`User ${member.user.username}#${member.user.discriminator} adding role ${config.proletariat} to user ${member_.id}/\
 ${member_.user.username}#${member_.user.discriminator}`);
         member_.addRole(guild.roles.find('name', config.proletariat))
           .then(() => message.reply(`✅ proletarified "${member_.user.username}#${member_.user.discriminator}".`))
@@ -58,7 +56,7 @@ Correct syntax is \`!demote "<user id|username>".`);
         const member_ = Number.isInteger(parseInt(userid_)) ? guild.member(userid_) : getMemberByName(guild, userid_);
         if (!member_) {message.reply(`❎ User not in guild "${guild.name}."`); return;}
 
-        console.log(`Removing ${config.proletariat} from user ${member_.id}/\
+        console.log(`User ${member.user.username}#${member.user.discriminator} removing ${config.proletariat} from user ${member_.id}/\
 ${member_.user.username}#${member_.user.discriminator}`);
         member_.removeRole(guild.roles.find('name', config.proletariat))
           .then(() => message.reply(`✅ unproletarified "${member_.user.username}#${member_.user.discriminator}".`))
@@ -73,5 +71,5 @@ Available commands are:
 * !demote "username or userid" - remove the proletariat role from a user (requires: config.admin or ${config.bourgeoisie})
 \`\`\``);
     }
-  }
+  //}
 });

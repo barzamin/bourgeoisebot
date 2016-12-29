@@ -1,5 +1,5 @@
 {
-	"guild": "170022105260359680",
+    "prefix": "!",
 	"admins": [
 		"191627281595236352",
 		"83067947169353728",
@@ -16,5 +16,6 @@
             "Patrons"
         ]
     },
-    "proletariat": "Proletariat"
+    // "proletariat": "Proletariat",
+    "guild": "170022105260359680"
 }

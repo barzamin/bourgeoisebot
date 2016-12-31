@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const debug = require('debug')('main');
+const debug = require('debug')('cuddlebot:main');
 const Discord = require('discord.js');
 
 const bot = new Discord.Client();

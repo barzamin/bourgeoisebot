@@ -1,4 +1,4 @@
-const debug = require('debug')('plugin-help');
+const debug = require('debug')('cuddlebot:plugin-help');
 const {command} = require('./common');
 const _ = require('lodash');
 

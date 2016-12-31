@@ -1,3 +1,5 @@
+const debug = require('debug')('cuddlebot:util');
+
 module.exports = {
   getMemberByReadable: function(guild, ident) {
     if (Number.isInteger(ident)) { // this is a raw userid

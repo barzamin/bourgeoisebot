@@ -19,7 +19,7 @@ bot.on('message', (message) => {
 
   for (plugin of plugins) {
     for ([trigger, action] of plugin.actions) {
-      if (trigger(message)) {
+      if (trigger.call(this, message)) {
         action(message, bot);
       }
     }

@@ -15,4 +15,8 @@ module.exports = {
       }
     }
   },
+
+  prettyUser: function(user) {
+    return `${user.username}#${user.discriminator}`;
+  },
 };

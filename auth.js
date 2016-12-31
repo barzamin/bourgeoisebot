@@ -7,8 +7,8 @@ class Auth {
 		return config.admins.includes(user.id);
 	}
 
-	can(member, operation) {
-	  return config.perms[operation].roles.map(x=>member.roles.exists('name', x)).some(x=>x===true)
+	can(guild, user, operation) {
+	  return config.perms[operation].map(x=>guild.member(user).roles.exists('name', x)).some(x=>x===true)
 	  	|| isAdmin(member); // admins automatically granted all permissions
 	}
 }

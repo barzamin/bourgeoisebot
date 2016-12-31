@@ -8,8 +8,8 @@ config = _.merge(require('./config.json'), require('./secrets.json'));
 const Auth = require('./auth');
 const util = require('./util');
 
-const auth = new Auth(config);
-plugins = [require('./plugins/help')];
+auth = new Auth(config);
+plugins = [require('./plugins/help'), require('./plugins/proletariat')];
 
 bot.login(config.token);
 bot.on('ready', () => console.log('Bot ready!'));

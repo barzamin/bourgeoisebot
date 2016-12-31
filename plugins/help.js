@@ -9,7 +9,7 @@ const Help = {
   },
   
   actions: [
-    [command('!help'), function (message, bot) {
+    [command('help'), function (message, bot) {
       message.reply(`⟹ cuddlebot v1.0-alpha ⟸\n***plugins***:\n`
       + this.plugins.map(p => {
         return `⟿ **${p.name}**\n`

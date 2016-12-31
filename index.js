@@ -17,8 +17,6 @@ bot.on('ready', () => console.log('Bot ready!'));
 bot.on('message', (message) => {
   if (message.author.bot) return; // drop out if it's our own message
 
-  const guild = bot.guilds.find('id', config.guild);
-
   for (plugin of plugins) {
     for ([trigger, action] of plugin.actions) {
       if (trigger(message)) {

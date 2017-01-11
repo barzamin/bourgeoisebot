@@ -9,7 +9,7 @@ class Auth {
 
 	can(guild, user, operation) {
 	  return config.perms[operation].map(x=>guild.member(user).roles.exists('name', x)).some(x=>x===true)
-	  	|| isAdmin(member); // admins automatically granted all permissions
+		|| this.isAdmin(user); // admins automatically granted all permissions
 	}
 }
 

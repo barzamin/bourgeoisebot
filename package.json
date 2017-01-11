@@ -23,7 +23,7 @@
   "homepage": "https://github.com/barzamin/bourgeoisebot#readme",
   "dependencies": {
     "debug": "^2.5.2",
-    "discord.js": "^9.1.1",
+    "discord.js": "^11.0.0",
     "lodash": "^4.15.0"
   }
 }

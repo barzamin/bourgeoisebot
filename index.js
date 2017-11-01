@@ -3,7 +3,8 @@ const debug = require('debug')('cuddlebot:main');
 const Discord = require('discord.js');
 
 const bot = new Discord.Client();
-config = _.merge(require('./config.json'), require('./secrets.json'));
+config = require('./config.json');
+config.token = process.env.TOKEN;
 
 const Auth = require('./auth');
 const util = require('./util');

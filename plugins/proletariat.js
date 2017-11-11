@@ -13,7 +13,7 @@ const Proletariat = {
   actions: [
     [(x) => command('promote')(x)||command('demote')(x), function (message, bot) {
       // grab the guild the bot is configured to operate on
-      const guild = bot.guilds.find('id', config.guild);
+      const guild = bot.guilds.get(config.guild);
 
       if (!auth.can(guild, message.author, 'manageProletariat')) {
         message.reply("❎ User not authorized to use command.");

@@ -1,6 +1,7 @@
 const debug = require('debug')('cuddlebot:plugin-help');
 const {command} = require('./common');
 const _ = require('lodash');
+const version = require('../package.json').version;
 
 const Help = {
   name: "Help",
@@ -10,7 +11,7 @@ const Help = {
   
   actions: [
     [command('help'), function (message, bot) {
-      message.reply(`⟹ cuddlebot v1.0-alpha ⟸\n***plugins***:\n`
+      message.reply(`⟹ cuddlebot v${version} ⟸\n***plugins***:\n`
       + this.plugins.map(p => {
         return `⟿ **${p.name}**\n`
           + _.map(p.docs, (d, c) => `   » **${this.config.prefix}${c}** ➩ ${d}`).join('\n');

@@ -12,11 +12,13 @@ const util = require('./util');
 auth = new Auth(config);
 plugins = [require('./plugins/help'), require('./plugins/proletariat')];
 
-bot.login(config.token);
-bot.on('ready', () => console.log('Bot ready!'));
+bot.on('ready', () => {
+  console.log(`=== bot start ===
+logged in as ${bot.user.tag}`);
+});
 
 bot.on('message', (message) => {
-  if (message.author.bot) return; // drop out if it's our own message
+  if (message.author.bot) return; // discard messages from bots
 
   for (plugin of plugins) {
     for ([trigger, action] of plugin.actions) {
@@ -26,3 +28,5 @@ bot.on('message', (message) => {
     }
   }
 });
+
+bot.login(config.token);

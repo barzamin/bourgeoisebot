@@ -1,6 +1,6 @@
 const debug = require('debug')('cuddlebot:plugin-proletariat');
 const {command} = require('./common');
-const {getMemberByReadable, prettyUser} = require('../util');
+const {getMemberByReadable} = require('../util');
 const _ = require('lodash');
 
 const Proletariat = {
@@ -33,7 +33,7 @@ const Proletariat = {
         message.reply(`❎ User not found in guild "${guild.name}".`); return;
       }
 
-      const handle_rolechange = (x) => (x.then(() => message.reply(`✅ ${{promote: 'proletarified', demote: 'unproletarified'}[action]} user "${prettyUser(member.user)}".`))
+      const handle_rolechange = (x) => (x.then(() => message.reply(`✅ ${{promote: 'proletarified', demote: 'unproletarified'}[action]} user "${member.user.tag}".`))
         .catch(e => message.reply(`❎ Failed to set user's role: ${e}`)));
 
       if (action === 'promote')
@@ -41,7 +41,7 @@ const Proletariat = {
       if (action === 'demote')
         handle_rolechange(member.removeRole(guild.roles.find('name', 'Proletariat')))
 
-      console.log(`[plugin: proletariat] (@${new Date()}) ${action} ${prettyUser(member.user)} by ${prettyUser(message.author)}`);
+      console.log(`[plugin: proletariat] (@${new Date()}) ${action} ${member.user.tag} by ${message.author.tag}`);
     }],
   ]
 };

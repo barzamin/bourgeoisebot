@@ -1,1 +1,1 @@
-worker: node index.js
+worker: ./node_modules/.bin/forever index.js

@@ -14,6 +14,7 @@ const Help = {
       message.reply(`⟹ cuddlebot v${version} ⟸\n***plugins***:\n`
       + this.plugins.map(p => {
         return `⟿ **${p.name}**\n`
+          + (p.desc ? p.desc + '\n' : '')
           + _.map(p.docs, (d, c) => `   » **${this.config.prefix}${c}** ➩ ${d}`).join('\n');
         }).join('\n')
       );

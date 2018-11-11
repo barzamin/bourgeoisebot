@@ -7,6 +7,7 @@ const _ = require('lodash');
 
 const Proletariat = {
   name: "Proletariat Management",
+  desc: "Action logs are at http://s3-us-west-2.amazonaws.com/cuddlebot/log.txt.",
   docs: {
     'promote': 'Promote a user to proletariat status',
     'demote': 'Demote a user from proletariat status',

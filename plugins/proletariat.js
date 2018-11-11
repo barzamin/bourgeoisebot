@@ -1,6 +1,8 @@
 const debug = require('debug')('cuddlebot:plugin-proletariat');
 const {command} = require('./common');
 const {getMemberByReadable} = require('../util');
+const {log} = require('../logger');
+
 const _ = require('lodash');
 
 const Proletariat = {
@@ -41,7 +43,7 @@ const Proletariat = {
       if (action === 'demote')
         handle_rolechange(member.removeRole(guild.roles.find('name', 'Proletariat')))
 
-      console.log(`[plugin: proletariat] (@${new Date()}) ${action} ${member.user.tag} by ${message.author.tag}`);
+      log(`[plugin: proletariat] (@${new Date()}) ${action} ${member.user.tag} by ${message.author.tag}`);
     }],
   ]
 };

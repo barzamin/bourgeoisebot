@@ -8,12 +8,13 @@ config.token = process.env.TOKEN;
 
 const Auth = require('./auth');
 const util = require('./util');
+const logger = require('./logger');
 
 auth = new Auth(config);
 plugins = [require('./plugins/help'), require('./plugins/proletariat')];
 
 bot.on('ready', () => {
-  console.log(`=== bot start ===
+  logger.log(`=== bot start ===
 logged in as ${bot.user.tag}`);
 });
 
